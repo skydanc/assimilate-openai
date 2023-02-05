@@ -1,7 +1,6 @@
 import os
 import openai
 
-
 animal = """Suggest three names for an animal that is a superhero.
 
 Animal: Cat
@@ -13,9 +12,8 @@ Names:
 """
 openai.api_key = os.getenv("OPENAI_API_KEY")
 response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=animal,
-        temperature=0.6,
+    model="text-davinci-003",
+    prompt=animal,
+    temperature=0.6,
 )
 print(response["choices"][0]["text"])
-    
